@@ -1,0 +1,43 @@
+<div>
+	<div class="account-login">
+		<div class="page-title">
+			<h1><?php echo $this->__('Please enter your information') ?></h1>
+		</div>
+		<div class="content">
+			<form method="post">
+				<ul class="form-list">
+					<li>
+						<label align=" center" for="email" class="required"><em>*</em><?php echo $this->__('Title') ?></label>
+						<div class="input-box">
+							<input type="text" name="title" placeholder="TITLE">
+						</div>
+					</li>
+					<li>
+						<label align=" center" for="email" class="required"><em>*</em><?php echo $this->__('Filename') ?></label>
+						<div class="input-box">
+							<input type="text" name="filename" placeholder="FILENAME">
+						</div>
+					</li>
+					<li>
+						<label align=" center" for="email" class="required"><em>*</em><?php echo $this->__('Content') ?></label>
+						<div class="input-box">
+							<input type="text" name="content" placeholder="CONTENT">
+						</div>
+					</li>
+					<li>
+						<label align=" center" for="email" class="required"><em>*</em><?php echo $this->__('Status') ?></label>
+						<div class="input-box">
+							<input type="text" name="status" placeholder="STATUS">
+						</div>
+					</li>
+				</ul>
+				<p class="required"><?php echo $this->__('* Required Fields') ?></p>					
+				
+			</div>
+			<div class="buttons-set" >                    
+				<button type="submit" class="button" name="sub" id="send2"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+			</div>
+		</form>
+	</div>
+</div>
+

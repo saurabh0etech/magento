@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    
+    <test1_index_index>
+        <reference name="content">
+            <block type="test1/test1" name="test1" template="test1/test1.phtml" />            
+        </reference>        
+    </test1_index_index>
+    <test1_index_insert>
+        <reference name="content">
+            <block type="test1/test1" name="test1" template="test1/add1.phtml" />            
+        </reference>        
+    </test1_index_insert>
+    <test1_index_edit>
+        <reference name="content">
+            <block type="test1/test1" name="test1" template="test1/edit.phtml" />            
+        </reference>        
+    </test1_index_edit>
+    <test1_index_delete>
+        <reference name="content">
+            <block type="test1/test1" name="test1" template="test1/delete.phtml" />            
+        </reference>        
+    </test1_index_delete>
+    <test1_index_input>
+        <reference name="content">
+            <block type="test1/test1" name="test1" template="test1/input.phtml" />            
+        </reference>        
+    </test1_index_input>
+    <test1_index_update>
+        <reference name="content">
+            <block type="test1/test1" name="test1" template="test1/update.phtml" />            
+        </reference>        
+    </test1_index_update>
+    <test1_index_search>
+        <reference name="content">
+            <block type="test1/test1" name="test1" template="test1/search.phtml" />            
+        </reference>        
+    </test1_index_search>
+    <test1_index_limit>
+        <reference name="content">
+            <block type="test1/test1" name="test1" template="test1/limit.phtml" />            
+        </reference>        
+    </test1_index_limit>
+</layout> 

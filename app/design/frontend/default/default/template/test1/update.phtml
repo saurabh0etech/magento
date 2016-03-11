@@ -1,0 +1,26 @@
+<div class="page-title">
+	<h1><?php echo $this->__('Edit Data') ?></h1>
+</div>
+
+<div class="account-login">
+	<div class="page-title">
+		<div class="center">
+			<div class="content">		
+				<label>Id:</label><?php echo Mage:: registry('upd'); ?><br>
+				<form method="post">			
+					<label>Title:</label><br><input type="text" name="name"  placeholder="Name" value=<?php echo Mage:: registry('name'); ?> ><br/>
+					<label>Age:</label><br><input type="text" name="age"  placeholder="Age" value=<?php echo Mage:: registry('age'); ?> ><br/>					
+					<label>City:</label><br><input type="text" name="city" placeholder="City" value=<?php echo Mage:: registry('city'); ?> ><br/>
+					<label>Email:</label><br><input type="text" name="email"  placeholder="Email" value=<?php echo Mage:: registry('email'); ?> ><br/>
+					<label>Contact:</label><br><input type="text" name="contact"  placeholder="contact" value=<?php echo Mage:: registry('contact'); ?> ><br/>					 		
+					<br/><br>				
+			</div>				
+		</div>
+			<div class="buttons-set" >                    
+				<button type="submit" class="button" name="sub" id="send2"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+			</div>
+		</form>
+	</div> 	
+</div>
+
+

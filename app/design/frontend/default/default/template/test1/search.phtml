@@ -1,0 +1,66 @@
+<?php
+$module2= $this->showJoin(); 
+if(!empty($module2))
+{	
+	$srch = $this->getRequest()->getPost();							
+	$data= $srch['srch'];
+	//echo $data;
+?>
+
+
+<div class="page-title">
+	<h1><?php echo $this->__('Search Result') ?></h1>
+</div>
+<center><form method="post" action="<?php echo $this->getUrl('test1/index/search');?>">
+			<div><input type="text" class="search" name="srch" value="<?php echo $data;?>" placeholder="Search here">
+				<input type="submit" class="button1" value="Search">
+			</div></br></br>
+		</form></center>
+<div><center>
+	<?php echo $this->getPagerHtml(); ?>
+	<table class="data-table" id="my-custom-table">
+		<col width="1" />
+		<col width="1" />
+		<col width="1" />
+		<col width="1" />
+		<col width="1" />
+		<col width="1" />	
+		<thead>
+			<tr>
+				<th><b>Id</b></th>
+				<th><b>Name</b></th>
+				<th><b>Age</b></th>
+				<th><b>City</b></th>               
+				<th><b>Email</b></th>
+				<th><b>Contact</b></th>				              
+			</tr>
+		</thead>
+		<?php foreach ($module2 as $data1) {?>
+		<tr>
+			<td class="number"><?php echo $data1['pro_id'] ?></td>
+			<td class="number"><?php echo $data1['name'] ?></td>
+			<td class="number"><?php echo $data1['age'] ?></td>
+			<td class="number"><?php echo $data1['city'] ?></td>            
+			<td class="number"><?php echo $data1['email'] ?></td>
+			<td class="number"><?php echo $data1['contact'] ?></td>	
+		</tr>
+		<?php } ?>
+	</table>
+	<?php echo $this->getPagerHtml(); ?>
+</br></br>         
+
+</center></div>
+<?php } 
+else {?>
+</br></br> </br></br> <center>
+	<h1><?php echo $this->__('No Data Found') ?></h1>		
+			<form action="<?php echo $this->getUrl('test1/index');?>">			
+				<center><input type="submit" class="button1" value="Click here to return"></center>
+			</br></br>
+		</form>	
+	</center>
+<?php
+}
+?>
+
+

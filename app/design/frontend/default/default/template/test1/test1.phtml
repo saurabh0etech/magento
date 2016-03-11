@@ -1,0 +1,113 @@
+
+
+<?php
+
+//$model = $this->showData(); 
+//$module1= $this-> getSystem(); 
+
+$module2= $this->showJoin(); 
+//print_r($module2[0]['pro_id']);
+//echo $limit;
+?>
+
+
+<div class="page-title">
+    <h1><?php echo $this->__('My Order') ?></h1>
+</div>
+<center>
+    <form method="post" action="<?php echo $this->getUrl('test1/index/search');?>">
+        <div><input type="text" class="search" name="srch" placeholder="Search here">
+            <input type="submit" class="button1" value="Search">
+        </div></br></br>
+    </form>
+</center>
+
+<div><center>
+    <?php echo $this->getPagerHtml(); ?>
+    <table class="data-table" id="my-custom-table">
+     <col width="1" />
+     <col width="1" />
+     <col width="1" />
+     <col width="1" />
+     <col width="1" />
+     <col width="1" />
+     <thead>
+        <tr>
+            <th><b>Id</b></th>
+            <th><b>Name</b></th>
+            <th><b>Age</b></th>
+            <th><b>City</b></th>               
+            <th><b>Email</b></th>
+            <th><b>Contact</b></th> 
+            <th><b>Update</b></th>
+            <th><b>Delete</b></th>               
+        </tr>
+    </thead>
+    <?php foreach ($module2 as $data1) {?>
+    <tr>
+        <td class="number"><?php echo $data1['pro_id'] ?></td>
+        <td class="number"><?php echo $data1['name'] ?></td>
+        <td class="number"><?php echo $data1['age'] ?></td>
+        <td class="number"><?php echo $data1['city'] ?></td>            
+        <td class="number"><?php echo $data1['email'] ?></td>
+        <td class="number"><?php echo $data1['contact'] ?></td>
+        <td><a href="<?php echo $this->getUrl('test1/index/update');?>?upd=<?php echo $data1['pro_id']?>">Update</a></td>
+        <td><a href="<?php echo $this->getUrl('test1/index/delete');?>?del=<?php echo $data1['con_id']?>" class="link-reorder"> Delete</a></td>
+
+    </tr>
+    <?php } ?>
+</table>
+<?php echo $this->getPagerHtml(); ?>
+</br></br></center></div>
+<button type="button" class="button"><span><span><a href="<?php echo $this->getUrl('test1/index/input');?>">Add Row</a></span></span></button>
+
+
+
+<?php
+ /*
+<div class="page-title">
+    <h1><?php echo $this->__('My Orders') ?></h1>
+</div>
+<div><center>
+    <table border="1" style="width:80%" class="data-table" id="my-orders-table">
+        <thead>
+            <tr>
+                <th><b>ID</b></th>
+                <th><b>TITLE</b></th>
+                <th><b>FILENAME</b></th>
+                <th><b>CONTENT</b></th>
+                <th><b>STATUS</b></th>
+                <th><b>UPDATE</b></th>
+                <th><b>DELETE</b></th>
+            </tr>
+        </thead>
+        <?php foreach ($model as $data) {?>
+        <tr>
+            <td><?php echo ($data->getData("test1_id")) ?></td>
+            <td><?php echo($data->getData("title")) ?></td>
+            <td><?php echo($data->getData("filename")) ?></td>
+            <td><?php echo($data->getData("content")) ?></td>
+            <td><?php echo($data->getData("status")) ?></td>
+            <td><a href="edit?edit=<?php echo($data->getData('test1_id'))?>"> EDIT</a></td>
+            <td><a href="delete?del=<?php echo($data->getData('test1_id'))?>"> DELETE</a></td>
+        </tr>
+        <?php } ?>
+    </table>
+</br></br>         
+
+</center></div>
+<button type="button" class="button"><span><span><a href="insert">Add Row</a></span></span></button>
+
+*/?>
+
+
+
+
+
+
+
+
+
+
+
+

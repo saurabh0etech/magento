@@ -1,0 +1,25 @@
+<div class="page-title">
+	<h1><?php echo $this->__('Edit Data') ?></h1>
+</div>
+
+<div class="account-login">
+	<div class="page-title">
+		<div class="center">
+			<div class="content">		
+				<label>Id:</label><?php echo Mage:: registry('edit'); ?><br>
+				<form method="post">			
+					<label>Title:</label><br><input type="text" name="title"  placeholder="Title" value=<?php echo Mage:: registry('title'); ?> ><br/>
+					<label>Filename:</label><br><input type="text" name="filename"  placeholder="filename" value=<?php echo Mage:: registry('filename'); ?> ><br/>
+					<label>Content:</label><br><textarea type="text" name="content"  placeholder="Content" ><?php echo Mage:: registry('content'); ?></textarea><br/>
+					<label>Status:</label><br><input type="text" name="status" placeholder="Status" value=<?php echo Mage:: registry('status'); ?> ><br/> 		
+					<br/><br>				
+			</div>				
+		</div>
+			<div class="buttons-set" >                    
+				<button type="submit" class="button" name="sub" id="send2"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+			</div>
+		</form>
+	</div> 	
+</div>
+
+
