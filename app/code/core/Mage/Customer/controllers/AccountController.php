@@ -297,13 +297,13 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
             $errors = $this->_getCustomerErrors($customer);
            
                        
-           //if (empty($errors)) {
+           //if (empty($errors)){
                 $customer->cleanPasswordsValidationData();
                 $customer->save();
                 $this->_dispatchRegisterSuccess($customer);
                 $this->_successProcessRegistration($customer);
                 
-                return;
+            return;
            // } else {   
              //   $this->_addSessionError($errors);
            // }
