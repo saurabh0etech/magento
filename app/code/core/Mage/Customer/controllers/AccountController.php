@@ -295,16 +295,19 @@ class Mage_Customer_AccountController extends Mage_Core_Controller_Front_Action
 
         try {
             $errors = $this->_getCustomerErrors($customer);
-
-            if (empty($errors)) {
+           
+                       
+           //if (empty($errors)) {
                 $customer->cleanPasswordsValidationData();
                 $customer->save();
                 $this->_dispatchRegisterSuccess($customer);
                 $this->_successProcessRegistration($customer);
+                
                 return;
-            } else {
-                $this->_addSessionError($errors);
-            }
+           // } else {   
+             //   $this->_addSessionError($errors);
+           // }
+                
         } catch (Mage_Core_Exception $e) {
             $session->setCustomerFormData($this->getRequest()->getPost());
             if ($e->getCode() === Mage_Customer_Model_Customer::EXCEPTION_EMAIL_EXISTS) {
