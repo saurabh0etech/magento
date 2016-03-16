@@ -50,6 +50,7 @@ list($_minimalPriceInclTax, $_maximalPriceInclTax) = $_priceModel->getTotalPrice
 $_weeeTaxAmount = 0;
 ?>
 <?php
+$module= $this->getDisplayMinimalPrice();
 if ($_product->getPriceType() == 1) {
     $_weeeTaxAmount = $_weeeHelper->getAmountForDisplay($_product);
     $_weeeTaxAmountInclTaxes = $_weeeTaxAmount;
