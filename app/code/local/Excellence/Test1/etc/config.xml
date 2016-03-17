@@ -111,10 +111,16 @@
 <global>
   <rewrite>
     <test1_cart> <!--This can be any unique id -->
-      <from><![CDATA[#^/checkout/cart/#]]></from>  <!-- the URL which u want to override-->
-      <to>/test1/checkout_cart/</to>  <!-- destination url -->
+      <from><![CDATA[#^/customer/account/#]]></from>  <!-- the URL which u want to override-->
+      <to>/test1/login_login/</to>  <!-- destination url -->
     </test1_cart>
   </rewrite>
+  <rewrite>
+        <test_cart> <!--This can be any unique id -->
+            <from><![CDATA[#^/checkout/cart/#]]></from>  <!-- the URL which u want to override-->
+            <to>/test1/checkout_cart/</to>  <!-- destination url -->
+        </test_cart>
+    </rewrite>
   <models>
     <test1>
       <class>Excellence_Test1_Model</class>
