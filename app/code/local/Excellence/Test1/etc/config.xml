@@ -112,7 +112,7 @@
   <rewrite>
     <test1_cart> <!--This can be any unique id -->
       <from><![CDATA[#^/customer/account/#]]></from>  <!-- the URL which u want to override-->
-      <to>/test1/login_login/</to>  <!-- destination url -->
+      <to>/test1/login_login/</to>  <!-- destination-url -->
     </test1_cart>
   </rewrite>  
   <models>
