@@ -56,5 +56,7 @@
             <template>test1/create.phtml</template>      
           </action>
         </reference>
-    </customer_account_create>    
+    </customer_account_create>
+    <!-- <customer_account_login> 
+    </customer_account_login> -->
 </layout> 
