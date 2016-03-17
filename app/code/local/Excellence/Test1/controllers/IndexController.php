@@ -134,4 +134,5 @@ class Excellence_Test1_IndexController extends Mage_Core_Controller_Front_Action
 		Mage::register('limit', $lim);		
 		$this->renderLayout();	
 	}*/
+	
 }

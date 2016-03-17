@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-    
+    <default>
+
+    </default>
     <test1_index_index>
         <reference name="content">
             <block type="test1/test1" name="test1" template="test1/test1.phtml" />            
@@ -41,4 +43,23 @@
             <block type="test1/test1" name="test1" template="test1/limit.phtml" />            
         </reference>        
     </test1_index_limit>
+    <customer_account_login>
+        <reference name="customer_form_login">
+          <action method="setTemplate">
+            <template>test1/login.phtml</template>      
+          </action>
+        </reference>
+    </customer_account_login>
+    <customer_account_create>
+        <reference name="customer_form_register">
+          <action method="setTemplate">
+            <template>test1/create.phtml</template>      
+          </action>
+        </reference>
+    </customer_account_create>
+    <!-- <customer_account_login> 
+       <reference name="content">
+           <block type="customer/form_login" name="new_test" template="login.phtml"  />
+       </reference>
+   </customer_account_login> -->
 </layout> 
