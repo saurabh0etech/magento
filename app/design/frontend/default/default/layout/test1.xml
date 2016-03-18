@@ -54,7 +54,8 @@
     <reference name="customer_form_register">
       <action method="setTemplate">
         <template>test1/create.phtml</template>      
-    </action>    
+    </action>
+        
 </reference>
 </customer_account_create>
 <catalog_category_default>
