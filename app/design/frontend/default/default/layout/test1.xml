@@ -54,11 +54,13 @@
     <reference name="customer_form_register">
       <action method="setTemplate">
         <template>test1/create.phtml</template>      
-    </action>
+    </action>    
 </reference>
-    <!-- <customer_account_login> 
-       <reference name="content">
-           <block type="customer/form_login" name="new_test" template="login.phtml"  />
-       </reference>
-   </customer_account_login> -->
+</customer_account_create>
+<catalog_category_default>
+    <reference name="product_list">
+        <action method="setTemplate"><template>test1/list1.phtml</template></action>
+  </reference>
+</catalog_category_default>
+    
 </layout> 
