@@ -166,7 +166,7 @@
     <rewrite>
       <product_price>Excellence_Test1_Block_Catalog_Product_Price</product_price>
     </rewrite>  
-  </catalog>
+    </catalog>
 </blocks>
 <helpers>
   <test1>
