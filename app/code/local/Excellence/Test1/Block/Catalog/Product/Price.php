@@ -9,14 +9,11 @@ class Excellence_Test1_Block_Catalog_Product_Price extends Mage_Catalog_Block_Pr
 //        return 'dsfasdf';
 //    }
 
-	public function getDisplayMinimalPrice()
-	{
-
-		echo "Block Override";
-		return $this->_getData('display_minimal_price');
-	}
-	// public function abc(){
-	// 	echo "Block Override"; 
+	// public function getDisplayMinimalPrice()
+	// {
+		
+	// 	return $this->_getData('display_minimal_price');
 	// }
+	
 
 }

@@ -4,7 +4,7 @@ class Excellence_Test1_Login_LoginController extends Mage_Customer_AccountContro
 
     public function indexAction()
     {
-
+        
         /*
          * Load an object by id 
          * Request looking like:
@@ -44,11 +44,13 @@ class Excellence_Test1_Login_LoginController extends Mage_Customer_AccountContro
         $this->renderLayout();
         
     }
-
+    
     public function createPostAction()
     {
-        $this->loadLayout();        
+        $this->loadLayout(); 
+        //echo "hello"; die();
         $errUrl = $this->_getUrl('*/*/create', array('_secure' => true));
+
         if (!$this->_validateFormKey()) {
             $this->_redirectError($errUrl);
             return;
@@ -70,13 +72,16 @@ class Excellence_Test1_Login_LoginController extends Mage_Customer_AccountContro
 
         try {
             $errors = $this->_getCustomerErrors($customer);
-            
+
+            // if (empty($errors)) {
             $customer->cleanPasswordsValidationData();
             $customer->save();
             $this->_dispatchRegisterSuccess($customer);
             $this->_successProcessRegistration($customer);
             return;
-            
+            // } else {
+            //     $this->_addSessionError($errors);
+            // }
         } catch (Mage_Core_Exception $e) {
             $session->setCustomerFormData($this->getRequest()->getPost());
             if ($e->getCode() === Mage_Customer_Model_Customer::EXCEPTION_EMAIL_EXISTS) {

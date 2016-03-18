@@ -45,7 +45,7 @@ public function getPagerHtml() {
 	return $this->getChildHtml('pager');
 }
 public function getSystem(){
-	$system = Mage::getStoreConfig('testsection/test/text',Mage::app()->getStore()); 
+	$system = Mage::getStoreConfig('testsection/test/drop_down',Mage::app()->getStore()); 
 	return $system;
 	}
 }
