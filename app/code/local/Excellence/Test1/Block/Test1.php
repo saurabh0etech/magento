@@ -44,7 +44,8 @@ public function __construct() {
 public function getPagerHtml() {
 	return $this->getChildHtml('pager');
 }
-/*	$system= Mage::getStoreConfig(‘customer/create_account/email_domain’,Mage::app()->getStore()); 
+public function getSystem(){
+	$system = Mage::getStoreConfig('testsection/test/drop_down',Mage::app()->getStore()); 
 	return $system;
-}*/
+	}
 }

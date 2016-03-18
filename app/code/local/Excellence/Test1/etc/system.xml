@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <newtab translate="label" module="customer">
+            <label>Excellence</label>
+            <sort_order>1</sort_order>
+        </newtab>
+    </tabs>
+    <sections>
+        <testsection translate="label" module="test1">
+            <class>separator-top</class>
+            <label>Catalog</label>
+            <tab>newtab</tab>
+            <sort_order>130</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <test translate="label">
+                    <label>Setting</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <drop_down translate="label">
+                            <label>Show Price</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>99</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                       </drop_down>
+                    </fields>                    
+                </test>
+                </groups>
+            </testsection>
+    </sections>
+</config>

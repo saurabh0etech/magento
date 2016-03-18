@@ -8,6 +8,15 @@
  */
 -->
 <config>
+  <default>  <!-- This needs to be placed direct inside <config> tag -->
+    <testsection>  <!-- Name of section -->
+      <test> <!-- Name of group -->
+        <patient>1</patient> <!-- Name of field -->
+        <slider>1</slider>
+      </test>
+    </testsection>
+  </default>
+
   <modules>
     <Excellence_Test1>
       <version>0.1.0</version>
@@ -100,6 +109,12 @@
 </layout>
 </adminhtml>   
 <global>
+  <rewrite>
+    <test1_cart> <!--This can be any unique id -->
+      <from><![CDATA[#^/customer/account/#]]></from>  <!-- the URL which u want to override-->
+      <to>/test1/login_login/</to>  <!-- destination url -->
+    </test1_cart>
+  </rewrite>
   <models>
     <test1>
       <class>Excellence_Test1_Model</class>
@@ -147,6 +162,10 @@
   <test1>
     <class>Excellence_Test1_Block</class>
   </test1>
+  <catalog>
+    <rewrite>
+      <product_price>Excellence_Test1_Block_Catalog_Product_Price</product_price>
+    </rewrite>      
 </blocks>
 <helpers>
   <test1>

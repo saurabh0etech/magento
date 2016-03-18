@@ -22,8 +22,8 @@ class Excellence_Test1_Model_Mysql4_Profile extends Mage_Core_Model_Mysql4_Abstr
 		$where = $this->_getReadAdapter()->quoteInto('profile.name like ?','%'.$value.'%');		
 		$select = $this->_getReadAdapter()->select()->from(array('profile'=>$table))->join(array('contact'=>$table2), $cond)->where($where)->limit($lim,$offset);
 		$result = $this->_getReadAdapter()->fetchAll($select);		
-		echo $select;
-		echo $value;
+		//echo $select;
+		//echo $value;
 		return $result;
 	}
 	/*public function loadByField($value){
