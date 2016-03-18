@@ -110,11 +110,11 @@
 </adminhtml>   
 <global>
   <rewrite>
-    <test1_cart> 
+    <test1_cart> <!--This can be any unique id -->
       <from><![CDATA[#^/customer/account/#]]></from>  <!-- the URL which u want to override-->
-      <to>/test1/login_login/</to>  <!-- destination--url -->
+      <to>/test1/login_login/</to>  <!-- destination url -->
     </test1_cart>
-  </rewrite>  
+  </rewrite>
   <models>
     <test1>
       <class>Excellence_Test1_Model</class>
@@ -165,8 +165,7 @@
   <catalog>
     <rewrite>
       <product_price>Excellence_Test1_Block_Catalog_Product_Price</product_price>
-    </rewrite>
-  </catalog>
+    </rewrite>      
 </blocks>
 <helpers>
   <test1>
