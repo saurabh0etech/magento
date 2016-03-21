@@ -21,4 +21,11 @@
     </action>    
 </reference>
 </customer_account_create>
+<customer_account_edit>
+    <reference name="customer_edit">
+      <action method="setTemplate">
+        <template>phone/edit.phtml</template>      
+    </action>    
+</reference>
+</customer_account_edit>
 </layout> 

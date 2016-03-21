@@ -14,10 +14,9 @@ class Excellence_Phone_Model_Contact extends Mage_Customer_Model_Customer
 			// echo $password;
 			// die();
 			$email = $this->getResource()->loadByContact($login);
-			//echo $email;
+			//echo $login; die();
 			$this->loadByEmail($email);
-		}
-         // $this->loadByEmail($login);
+		}         
 		if ($this->getConfirmation() && $this->isConfirmationRequired()) {
 			throw Mage::exception('Mage_Core', Mage::helper('customer')->__('This account is not confirmed.'),
 				self::EXCEPTION_EMAIL_NOT_CONFIRMED
