@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Excellence
+ * @package    Excellence_Phone
+ * @author     ModuleCreator
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+  <modules>
+    <Excellence_Phone>
+      <version>0.1.0</version>
+    </Excellence_Phone>
+  </modules>
+  <frontend>
+    <routers>
+      <phone>
+        <use>standard</use>
+        <args>
+          <module>Excellence_Phone</module>
+          <frontName>phone</frontName>
+        </args>
+      </phone>
+    </routers>
+    <layout>
+      <updates>
+        <phone>
+          <file>phone.xml</file>
+        </phone>
+      </updates>
+    </layout>
+  </frontend>
+  <admin>
+    <routers>
+     <phone>
+      <use>admin</use>
+      <args>
+       <module>Excellence_Phone</module>
+       <frontName>phone</frontName>
+     </args>
+   </phone>
+ </routers>
+</admin>
+<adminhtml>
+  <menu>
+   <phone module="phone">
+    <title>Phone</title>
+    <sort_order>71</sort_order>               
+    <children>
+     <items module="phone">
+      <title>Manage Items</title>
+      <sort_order>0</sort_order>
+      <action>phone/adminhtml_phone</action>
+    </items>
+  </children>
+</phone>
+</menu>
+<acl>
+ <resources>
+  <all>
+   <title>Allow Everything</title>
+ </all>
+ <admin>
+   <children>
+    <Excellence_Phone>
+     <title>Phone Module</title>
+     <sort_order>10</sort_order>
+   </Excellence_Phone>
+ </children>
+</admin>
+</resources>
+</acl>
+<layout>
+ <updates>
+  <phone>
+   <file>phone.xml</file>
+ </phone>
+</updates>
+</layout>
+</adminhtml>   
+<global>
+  <models>
+    <phone>
+      <class>Excellence_Phone_Model</class>
+      <resourceModel>phone_mysql4</resourceModel>
+    </phone>
+    <phone_mysql4>
+      <class>Excellence_Phone_Model_Mysql4</class>
+      <entities>
+        <phone>
+          <table>phone</table>
+        </phone>
+      </entities>
+    </phone_mysql4>
+    <customer>
+      <rewrite>
+        <customer>Excellence_Phone_Model_Contact</customer>>
+      </rewrite>
+    </customer>
+    <customer_resource>
+      <rewrite>
+        <customer>Excellence_Phone_Model_Resource_Contact</customer>
+      </rewrite>
+    </customer_resource>
+  </models>
+  <resources>
+    <phone_setup>
+      <setup>
+        <module>Excellence_Phone</module>
+        <class>Mage_Customer_Model_Entity_Setup</class>
+      </setup>
+      <connection>
+        <use>core_setup</use>
+      </connection>
+    </phone_setup>
+    <phone_write>
+      <connection>
+        <use>core_write</use>
+      </connection>
+    </phone_write>
+    <phone_read>
+      <connection>
+        <use>core_read</use>
+      </connection>
+    </phone_read>
+  </resources>
+  <blocks>
+    <phone>
+      <class>Excellence_Phone_Block</class>
+    </phone>
+  </blocks>
+  <helpers>
+    <phone>
+      <class>Excellence_Phone_Helper</class>
+    </phone>
+  </helpers>
+  <customer_account>
+    <phone_no><create>1</create><update>1</update><name>1</name></phone_no>        
+  </customer_account>
+</global>
+</config>
