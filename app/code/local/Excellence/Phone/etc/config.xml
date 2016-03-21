@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Excellence
+ * @package    Excellence_Test1
+ * @author     ModuleCreator
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+  <default>  <!-- This needs to be placed direct inside <config> tag -->
+    <testsection>  <!-- Name of section -->
+      <test> <!-- Name of group -->
+        <patient>1</patient> <!-- Name of field -->
+        <slider>1</slider>
+      </test>
+    </testsection>
+  </default>
+
+  <modules>
+    <Excellence_Test1>
+      <version>0.1.0</version>
+    </Excellence_Test1>
+  </modules>
+  <frontend>
+    <routers>
+      <test1>
+        <use>standard</use>
+        <args>
+          <module>Excellence_Test1</module>
+          <frontName>test1</frontName>
+        </args>
+      </test1>
+    </routers>
+    <layout>
+      <updates>
+        <test1>
+          <file>test1.xml</file>
+        </test1>
+      </updates>
+    </layout>
+  </frontend>
+  <admin>
+    <routers>
+     <test1>
+      <use>admin</use>
+      <args>
+       <module>Excellence_Test1</module>
+       <frontName>test1</frontName>
+     </args>
+   </test1>
+ </routers>
+</admin>
+<adminhtml>
+  <acl>
+    <resources>
+      <admin>  <!--This is acl based on URL. If you see URL it would be /admin/system_config/ -->
+        <children>
+          <system>
+            <children>
+             <config>
+              <children>
+                <testsection translate="title" module="fav">  <!-- This is name of the section created by us -->
+                  <title>Test Section ACL</title>  <!-- Title as shown in User->Roles->Permissions Window -->
+                  <sort_order>99</sort_order>
+                </testsection>
+              </children>
+            </config>
+          </children>
+        </system>
+      </children>
+    </admin>
+  </resources>
+</acl>
+<menu>
+ <test1 module="test1">
+  <title>Test1</title>
+  <sort_order>71</sort_order>               
+  <children>
+   <items module="test1">
+    <title>Manage Items</title>
+    <sort_order>0</sort_order>
+    <action>test1/adminhtml_test1</action>
+  </items>
+</children>
+</test1>
+</menu>
+<acl>
+ <resources>
+  <all>
+   <title>Allow Everything</title>
+ </all>
+ <admin>
+   <children>
+    <Excellence_Test1>
+     <title>Test1 Module</title>
+     <sort_order>10</sort_order>
+   </Excellence_Test1>
+ </children>
+</admin>
+</resources>
+</acl>
+<layout>
+ <updates>
+  <test1>
+   <file>test1.xml</file>
+ </test1>
+</updates>
+</layout>
+</adminhtml>   
+<global>
+  <rewrite>
+    <test1_cart> <!--This can be any unique id -->
+      <from><![CDATA[#^/customer/account/#]]></from>  <!-- the URL which u want to override-->
+      <to>/test1/login_login/</to>  <!-- destination url -->
+    </test1_cart>
+  </rewrite>
+  <models>
+    <test1>
+      <class>Excellence_Test1_Model</class>
+      <resourceModel>test1_mysql4</resourceModel>
+    </test1>
+    <test1_mysql4>
+      <class>Excellence_Test1_Model_Mysql4</class>
+      <entities>
+        <test1>
+          <table>test1</table>
+        </test1>
+        <profile>
+          <table>profile</table>
+        </profile>
+        <new>
+         <table>new</table>
+       </new>
+       <contact>
+        <table>contact</table>
+      </contact>
+    </entities>
+  </test1_mysql4>
+</models>
+<resources>
+  <test1_setup>
+    <setup>
+      <module>Excellence_Test1</module>
+    </setup>
+    <connection>
+      <use>core_setup</use>
+    </connection>
+  </test1_setup>
+  <test1_write>
+    <connection>
+      <use>core_write</use>
+    </connection>
+  </test1_write>
+  <test1_read>
+    <connection>
+      <use>core_read</use>
+    </connection>
+  </test1_read>
+</resources>
+<blocks>
+  <test1>
+    <class>Excellence_Test1_Block</class>
+  </test1>
+  <catalog>
+    <rewrite>
+      <product_price>Excellence_Test1_Block_Catalog_Product_Price</product_price>
+    </rewrite>  
+    </catalog>
+</blocks>
+<helpers>
+  <test1>
+    <class>Excellence_Test1_Helper</class>
+  </test1>
+</helpers>
+</global>
+</config>

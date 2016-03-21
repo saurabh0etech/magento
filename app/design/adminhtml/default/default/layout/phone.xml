@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <phone_adminhtml_phone_index>
+        <reference name="content">
+            <block type="phone/adminhtml_phone" name="phone" />
+        </reference>
+    </phone_adminhtml_phone_index>
+</layout>
