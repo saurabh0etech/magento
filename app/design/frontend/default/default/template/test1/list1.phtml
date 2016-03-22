@@ -40,8 +40,8 @@
 <?php
 $_productCollection=$this->getLoadedProductCollection();
 $_helper = $this->helper('catalog/output');
-$system = Mage::getStoreConfig('testsection/test/drop_down',Mage::app()->getStore());
-echo $system;
+// $system = Mage::getStoreConfig('testsection/test/drop_down',Mage::app()->getStore());
+// echo $system;
 ?>
 <?php if(!$_productCollection->count()): ?>
     <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
@@ -64,7 +64,9 @@ echo $system;
                                 <?php if($_product->getRatingSummary()): ?>
                                     <?php echo $this->getReviewsSummaryHtml($_product) ?>
                                 <?php endif; ?>
-                                <?php echo $this->getPriceHtml($_product, true) ?>
+                                <?php //if($system==1):?>
+                                    <?php echo $this->getPriceHtml($_product, true) ?>
+                                <?php// endif; ?>
                                 <?php if($_product->isSaleable()): ?>
                                     <p><button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
                                 <?php else: ?>
@@ -104,11 +106,8 @@ echo $system;
                     <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
                     <?php if($_product->getRatingSummary()): ?>
                         <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
-                    <?php endif; ?>
-                    <?php if($system==1):?>
-                        <?php echo $this->getPriceHtml($_product, true) ?>
-                        
-                    <?php endif; ?>
+                    <?php endif; ?>                    
+                    <?php echo $this->getPriceHtml($_product, true) ?>                  
                     <div class="actions">
                         <?php if($_product->isSaleable()): ?>
                             <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>

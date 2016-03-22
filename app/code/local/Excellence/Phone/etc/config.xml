@@ -144,7 +144,7 @@
   <events>
    <customer_login>
      <observers>
-      <login_time><!--User Defined Unique Name-->
+      <login_time>
        <type>singleton</type>
        <class>Excellence_Phone_Model_Observer</class>
        <method>loginStatus</method>             
