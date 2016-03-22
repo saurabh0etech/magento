@@ -172,6 +172,28 @@
   <test1>
     <class>Excellence_Test1_Helper</class>
   </test1>
-</helpers> 
+</helpers>
+<events>
+ <catalog_product_get_final_price>
+   <observers>
+     <hideprice_catalog_price_observer>
+       <type>singleton</type>
+       <class>Excellence_Test1_Model_Observer</class>
+       <method>hidePrice</method>
+     </hideprice_catalog_price_observer>
+   </observers>
+ </catalog_product_get_final_price>
+</events>
+<events>
+ <catalog_product_collection_load_after>
+  <observers>
+    <hprice_catalog_price_observer>
+      <type>singleton</type>
+      <class>Excellence_Test1_Model_Observer</class>
+      <method>hidePriceCatalog</method>
+    </hprice_catalog_price_observer>
+  </observers>
+</catalog_product_collection_load_after>
+</events>  
 </global>
 </config>
