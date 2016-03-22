@@ -48,4 +48,6 @@ public function getSystem(){
 	$system = Mage::getStoreConfig('testsection/test/drop_down',Mage::app()->getStore()); 
 	return $system;
 	}
+	
+}
 }
