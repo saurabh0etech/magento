@@ -1,8 +1,8 @@
 <?php
 class Excellence_Phone_Model_Observer {
     
-public function loginStatus(Varien_Event_Observer $observer) {   
-Mage::log("hello"); 
+    public function loginStatus(Varien_Event_Observer $observer) {   
+        Mage::log("hello"); 
         $event = $observer->getEvent();       
         $customer = $event->getCustomer();
         $email = $customer->getEmail();
@@ -14,10 +14,9 @@ Mage::log("hello");
         $id = $model->save()->getId();
         $myValue = $id;
         //echo $myValue; die();
-        Mage::getSingleton('core/session')->setMyValue($myValue);
-        Mage::getSingleton('core/session')->addSuccess($id);
+        Mage::getSingleton('core/session')->setMyValue($myValue);        
     }
-public function logoutStatus( Varien_Event_Observer $observer) { 
+    public function logoutStatus( Varien_Event_Observer $observer) { 
         //Mage::log("hello world");
         $event = $observer->getEvent();       
         $customer = $event->getCustomer();
