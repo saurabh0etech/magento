@@ -91,6 +91,9 @@
         <phone>
           <table>phone</table>
         </phone>
+        <login>
+          <table>user_details</table>
+        </login>
       </entities>
     </phone_mysql4>
     <customer>
@@ -138,5 +141,27 @@
   <customer_account>
     <phone_no><create>1</create><update>1</update><name>1</name></phone_no>        
   </customer_account>
+  <events>
+   <customer_login>
+     <observers>
+      <login_time><!--User Defined Unique Name-->
+       <type>singleton</type>
+       <class>Excellence_Phone_Model_Observer</class>
+       <method>loginStatus</method>             
+     </login_time>>
+   </observers>
+ </customer_login>
+ </events>
+ <events>
+   <customer_logout>
+    <observers>
+      <logout_time>
+        <type>singleton</type>
+        <class>Excellence_Phone_Model_Observer</class>
+        <method>logoutStatus</method>
+      </logout_time>>
+    </observers>
+  </customer_logout>
+</events>  
 </global>
 </config>
