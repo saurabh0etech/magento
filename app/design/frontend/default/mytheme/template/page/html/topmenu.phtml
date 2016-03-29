@@ -34,6 +34,24 @@
 <?php $_menu = $this->getHtml('level-top') ?>
 <?php if($_menu): ?>
 <div >
-    
+    <ul class="links" id="nav">
+        <li class="user">            
+            <a href="<?php echo $this->getUrl('customer/account') ?>"><?php echo $this->__('Home') ?></a>  
+        </li>
+
+        <li class="wishlist">           
+            <a href="<?php echo $this->getUrl('wishlist') ?>"><?php echo $this->__('Shop') ?></a>
+        </li>
+
+        <li  class="checkout">            
+            <a href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Blog') ?></a>
+        </li>
+        <li class="cart">           
+            <a href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('404') ?></a>
+        </li>
+        <li class="login">           
+            <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Contact') ?></a >
+        </li>   
+    </ul>
 </div>
 <?php endif ?>

@@ -30,7 +30,160 @@
         width:500px;
         margin:50px auto;
 }
+.header_top {
+    background: none repeat scroll 0px 0px #F0F0E9;
+}
+.top-header {
+    background-color: hsl(60, 19%, 93%);
+    height: 37px;
+    width: 100%;
+}
+.header {
+      width: 1137px;
+      margin: 0 auto;
+      padding: 9px 0;
+      text-align: right;
+      position: relative;
+      z-index: 10;
+}
+}
+.contact {
+    float: left;
+    margin-left: -2px;
+    margin-top: 0;
+    width: 335px;
+}
+.contact {
+    float: left;
+    margin-left: -2px;
+    margin-top: 0;
+    width: 335px;
+}
 
+.contact li a {
+    color: hsl(43, 3%, 40%);
+    font-family: 'Roboto',sans-serif;
+    font-size: 11px;
+}
+.phone img {
+
+      color: hsl(43, 3%, 40%);
+      height: 13px;
+      margin-left: -1px;
+      margin-top: 2px;
+      width: 17px;
+}
+
+.message img {
+    color: hsl(43, 3%, 40%);
+  height: 10px;
+  margin-left: 5px;
+  margin-top: 3px;
+  width: 17px;
+  height: 15px;
+}
+.message > a {
+    text-decoration: none;
+}
+.phone > a{
+    text-decoration: none;
+}
+.message {
+    margin-left: 27px;
+}
+
+.contact li {
+    color: hsl(43, 3%, 40%);
+    display: inline;
+    float: left;
+    font-family: 'Roboto',sans-serif;
+    font-size: 12px;
+}
+
+.social-icon {
+
+    float: right;
+    height: 34px;
+    margin-top: -10px;
+    width: 276px;
+}
+.social-facebook {
+    float: right;
+    height: 37px;
+    width: 43px;
+}
+.social-facebook img {
+    height: 15px;
+  margin-right: 3px;
+  margin-top: 10px;
+  width: 15px;
+}
+
+.social-facebook:hover{
+    background-color: #2392CE;
+}
+
+#twitter:hover{
+     background-color: #5BBCEC; 
+
+}
+#linkedin:hover{
+     background-color: #FF4518; 
+
+}
+#neww:hover{
+     background-color: #90C9DC; 
+
+}
+#google:hover{
+     background-color: #CE3C2D; 
+
+}
+.search {
+        padding:8px 15px;
+        background:rgba(50, 50, 50, 0.2);
+        border:0px solid #dbdbdb;
+}
+.button1 {
+        position:relative;
+        padding:6px 15px;
+        left:-8px;
+        border:2px solid #207cca;
+        background-color:#207cca;
+        color:#fafafa;
+}
+.button:hover  {
+        background-color:#fafafa;
+        color:#207cca;
+}       
+.header .links a {
+      color: hsl(43, 3%, 40%);
+      font-family: 'Roboto',sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0;
+      text-decoration: none;
+}
+.links li {
+      display: inline;
+       border-style: none;
+}
+.header .quick-access {
+      float: right;
+      padding: 27px 0 0;
+      width: 471px;
+      margin-top: -25px;
+}
+.header .links {
+      float: right;
+      margin: 0 0 6px;
+}
+#nav a { color: hsl(43, 3%, 40%);
+      font-family: 'Roboto',sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0;
+      text-decoration: none; float:left; padding:5px 12px 6px 8px;}
 
       body          { font:12px/1.55 Arial, Helvetica, sans-serif; color:#2f2f2f; text-align:center; }
 
