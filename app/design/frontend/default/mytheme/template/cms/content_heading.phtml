@@ -24,8 +24,85 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php if($_heading = $this->getContentHeading()): ?>
-    <div class="page-title">
-        <h1><?php echo $_heading; ?></h1>
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Abel" />
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<a>
+<div class="slider">
+	<div class="left-slider">
+		<div class="eshopper">
+			<h1><span>E</span>-SHOPPER</h1> 
+		</div>
+		<h2 class="text">Free Ecommerce Template</h2>
+		<p class="slider-content">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		</p>
+		<div class="get-btn" >
+			<button class="" data-toggle="dropdown" type="button">
+				Get it now
+
+			</button> 
+		</div>
+	</div>
+	<div class="right-slider">
+		<div class="girl">
+			<img src="<?php echo $this->getSkinUrl('images/web/girl1.jpg') ?>"> 
+		</div>
+		<div class="price-tag">
+			<img src="<?php echo $this->getSkinUrl('images/web/price.png') ?>"> 
+		</div>
+		<a href="#" class="prev"><img src="<?php echo $this->getSkinUrl('images/web/prev.png') ?>"  alt="Arrow Prev"></a>
+<a href="#" class="next"><img src="<?php echo $this->getSkinUrl('images/web/next.png') ?>" alt="Arrow Next"></a>
+	</div>
+</div>
+</a>
+
+      <div class="clear">    </div>
+<div class="hr">   </div>
+<div class="left-sidebar">
+    <h2 class="cate" >CATEGORY</h2>
+    <div class="main-cat">
+        <?php
+        $obj = new Mage_Catalog_Block_Navigation();
+        $store_cats = $obj->getStoreCategories();
+        $current_cat = $obj->getCurrentCategory();
+        $current_cat = (is_object($current_cat) ? $current_cat->getName() : '');
+        foreach ($obj->getCurrentChildCategories() as $subcat) {
+            echo '<li><a href="' . $subcat->getURL() . '">' . $subcat->getName() . "</a></li>\n";
+        }
+        echo "</ul>\n</li>\n";
+        ?>
     </div>
-<?php endif; ?>
+    <div class="range-bond" >
+        <h2 class="pr-brond" >BRANDS</h2>
+        <div class="range-slider" >
+            <ul>
+                <li><a href="<?php echo $this->getUrl('') ?>">
+                        <?php echo $this->__('REBOOK'); ?>
+                    </a></li>
+                <li><a href="<?php echo $this->getUrl('') ?>">
+                        <?php echo $this->__('NIKE'); ?>
+                    </a></li>
+                <li><a href="<?php echo $this->getUrl('') ?>">
+                        <?php echo $this->__('PUMA'); ?>
+                    </a></li> 
+            </ul>
+        </div>
+    </div>
+    <div class="range" >
+        <h2 class="pr-range" >PRICE RANGE</h2>
+        <div class="range-slider" >
+            <p>
+                <label for="amount">Price range:</label>
+                <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold">
+            </p>
+            <div id="slider-range"></div>
+        </div>
+        <div class="shipping-image" >
+            <img src="<?php echo $this->getSkinUrl('images/shipping.jpg') ?>"> 
+        </div>
+    </div>
+</div>
+<div class="right-sidebar">
+    <h2 class="feature" >FEATURES ITEMS</h2>
+</div>
