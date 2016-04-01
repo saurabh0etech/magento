@@ -50,4 +50,3 @@ public function getSystem(){
 	}
 	
 }
-}
