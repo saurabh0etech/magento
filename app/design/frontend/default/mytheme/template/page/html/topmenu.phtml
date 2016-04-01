@@ -31,9 +31,34 @@
  * @see Mage_Page_Block_Html_Topmenu
  */
 ?>
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Quicksand:400,300,700' rel='stylesheet' type='text/css'>
 <?php $_menu = $this->getHtml('level-top') ?>
-<?php if($_menu): ?>
-<div >
-    
-</div>
+<?php if($_menu):?>
+    <div class="nav-container">
+        <ul class="mainmenu" id="nav">
+            <li class="nav-home">            
+                <a href="<?php echo $this->getUrl('customer/account') ?>"><?php echo $this->__('Home') ?></a>  
+            </li>
+
+            <li id="nav-wish" class="nav-wish">           
+                <a href="<?php echo $this->getUrl('#') ?>"><?php echo $this->__('Shop') ?></a>
+                <img src="<?php echo $this->getSkinUrl('images/web/down.png') ?>">
+                <ul class="showCat">
+                <?php echo $_menu; ?>
+                </ul>
+            </li> 
+
+            <li  class="nav-check">            
+                <a href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Blog') ?></a>
+                <img src="<?php echo $this->getSkinUrl('images/web/down.png') ?>">
+            </li>
+            <li class="nav-error">           
+                <a href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('404') ?></a>
+            </li>
+            <li class="nav-contact">           
+                <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Contact') ?></a >
+                </li>   
+        </ul>   
+    </div>
 <?php endif ?>

@@ -31,5 +31,26 @@
 ?>
 <?php $_links = $this->getLinks(); ?>
 <?php if(count($_links)>0): ?>
-	
+	<ul class="links"<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
+		<li class="user">
+			<img src="<?php echo $this->getSkinUrl('images/web/account.png') ?>">
+			<a href="<?php echo $this->getUrl('customer/account') ?>"><?php echo $this->__('Account') ?></a>  
+		</li>
+		<li class="wishlist">
+			<img src="<?php echo $this->getSkinUrl('images/web/wishlist.png') ?>">
+			<a href="<?php echo $this->getUrl('wishlist') ?>"><?php echo $this->__('Wishlist') ?></a>
+		</li>
+		<li  class="checkout">
+			<img src="<?php echo $this->getSkinUrl('images/web/checkout.png') ?>">
+			<a href="<?php echo $this->getUrl('checkout') ?>"><?php echo $this->__('Checkout') ?></a>
+		</li>
+		<li class="cart">
+			<img src="<?php echo $this->getSkinUrl('images/web/cart.png') ?>">
+			<a href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('Cart') ?></a>
+		</li>
+		<li class="login">
+			<img src="<?php echo $this->getSkinUrl('images/web/login.png') ?>">
+			<a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo $this->__('Login') ?></a>
+		</li>
+	</ul>
 <?php endif; ?>
