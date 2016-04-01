@@ -27,28 +27,66 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
-<div >
-    
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Quicksand:400,300,700' rel='stylesheet' type='text/css'>
+<div class="header-container">
+
     <div class="top-header">
         <div class="header">               
 
-           
-    </div>    
-</div>  
+            <ul class="contact">
+             <li class="phone"><a href="#"><img src="<?php echo $this->getSkinUrl('images/web/phone.png') ?>">+95 40 15 53 22 </a></li> 
+             <li class="message"><a href="#"><img src="<?php echo $this->getSkinUrl('images/web/msgbox.png') ?>">info@domain.com</a> </li>
+         </ul>
 
-<div class="header">
+         <div class="social-icon">
+            <div id="facebook" class="social-facebook"><a href="#"><img src="<?php echo $this->getSkinUrl('images/web/google.png') ?>"></a></div> 
+            <div id="twitter" class="social-facebook"><a href="#"><img src="<?php echo $this->getSkinUrl('images/web/globe.png') ?>"></a></div>
+            <div id="linkedin" class="social-facebook"><a href="#"><img src="<?php echo $this->getSkinUrl('images/web/linkdin.png') ?>"></a></div>            
+            <div id="neww" class="social-facebook"><a href="#"><img src="<?php echo $this->getSkinUrl('images/web/twit.png') ?>"></img></a></div>                    
+            <div id="google" class="social-facebook"><a href="#"><img src="<?php echo $this->getSkinUrl('images/web/fb.png') ?>"></a></div>
+            <p>&nbsp;</p> 
+        </div>
+    </div>    
+</div> 
+</div>
+
+<div id="main-head"class="header">
     <?php if ($this->getIsHomePage()):?>
         <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
     <?php else:?>
         <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
     <?php endif?>
-    <div class="quick-access">
-        <?php echo $this->getChildHtml('topSearch') ?>
-        <p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?></p>
-        <?php echo $this->getChildHtml('topLinks') ?>
-        <?php echo $this->getChildHtml('store_language') ?>
+    <div class="country">
+        <?php
+        $_countries = $this->countryName();
+        //print_r($_countries);            
+        ?>
+        <?php if (count($_countries) > 0): ?>
+            <select class="country-list" name="country" id="country">
+            <option value="0">--SELECT--</option>                         
+                <?php foreach ($_countries as $_country): ?>
+                    <option value="<?php echo $_country['value'] ?>">
+                        <?php echo $_country['label'] ?>                        
+                <?php endforeach; ?>
+            </select>
+        <?php endif; ?>
+    </div> 
+    <div class="doller" >
+    <?php          
+        echo $this->getChildHtml('custom_currency_selector') ;      
+        ?> 
+        <div class="quick-access">
+            <?php //echo $this->getChildHtml('topSearch') ?>
+            <p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?></p>
+            <?php echo $this->getChildHtml('topLinks') ?>
+            <?php echo $this->getChildHtml('store_language') ?>
+        </div>
+        <?php echo $this->getChildHtml('topContainer'); ?>
     </div>
-    <?php echo $this->getChildHtml('topContainer'); ?>
-</div>
 </div>
 <?php echo $this->getChildHtml('topMenu') ?>
+<div id="my-search" class="quick-access">
+    <?php echo $this->getChildHtml('topSearch') ?>
+
+</div>  

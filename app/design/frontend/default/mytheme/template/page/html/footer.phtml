@@ -24,10 +24,195 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="footer-container">
-    <div class="footer">
-        <?php echo $this->getChildHtml() ?>
-        <p class="bugs"><?php echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php echo $this->__('Report All Bugs') ?></strong></a> <?php echo $this->__('(ver. %s)', Mage::getVersion()) ?></p>
-        <address><?php echo $this->getCopyright() ?></address>
-    </div>
-</div>
+
+	<footer id="footer"><!--Footer-->
+		<div class="top">
+			<div class="container">
+				<div class="row">
+					<div class="f-logo">
+						<div class="f-content">
+							<h2><span>E</span>-<?php echo $this->__('SHOPPER'); ?></h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+						</div>
+					</div>
+					<div class="footer-image">
+						<div class="image-first">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img alt="" src="<?php echo $this->getSkinUrl('images/web/f-img1.png') ?>">
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p><?php echo $this->__('Circle of Hands'); ?></p>
+								<h2><?php echo $this->__('24 DEC 2014'); ?></h2>
+							</div>
+						</div>
+					</div>
+					<div class="image-first">
+						<div class="video-gallery text-center">
+							<a href="#">
+								<div class="iframe-img">
+									<img alt="" src="<?php echo $this->getSkinUrl('images/web/f-img2.png') ?>">
+								</div>								
+							</a>
+							<p><?php echo $this->__('Circle of Hands'); ?></p>
+							<h2> <?php echo $this->__('24 DEC 2014'); ?></h2>
+						</div>
+					</div>
+
+					<div class="image-first">
+						<div class="video-gallery text-center">
+							<a href="#">
+								<div class="iframe-img">
+									<img alt="" src="<?php echo $this->getSkinUrl('images/web/f-img3.png') ?>">
+								</div>								
+							</a>
+							<p><?php echo $this->__('Circle of Hands'); ?></p>
+							<h2> <?php echo $this->__('24 DEC 2014'); ?></h2>
+						</div>
+					</div>
+
+					<div class="image-first">
+						<div class="video-gallery text-center">
+							<a href="#">
+								<div class="iframe-img">
+									<img alt="" src="<?php echo $this->getSkinUrl('images/web/f-img4.png') ?>">
+								</div>
+								<div class="overlay-icon">
+									<i class="fa fa-play-circle-o"></i>
+								</div>
+							</a>
+							<p>Circle of Hands</p>
+							<h2>24 DEC 2014</h2>
+						</div>
+					</div>
+				</div>
+				<div class="image-map">
+					<div class="map-addr">
+						<img alt="" src="<?php echo $this->getSkinUrl('images/web/map.png') ?>">
+						<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	<div class="footer-widget">
+		<div class="container">
+			<div class="row">
+				<div class="service">
+					<div class="f-widget">
+						<h2>Service</h2>
+						<ul class="nav nav-pills nav-stacked">
+							<li><a href="#">Online Help</a></li>
+							<li> <a href="<?php echo $this->getUrl('customer-service') ?>">
+								<?php echo $this->__('Contact Us'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('Order Status'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl(' ') ?>">
+								<?php echo $this->__('Change ocation'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('FAQ'); ?>
+							</a></li>
+						</ul>
+					</div>
+				</div>				
+			
+				<div class="shop">
+					<div class="f-widget">
+						<h2>Quock Shop</h2>
+						<ul class="nav nav-pills nav-stacked">
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('T-Shirt'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('Mens'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('Womens'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('Gift Cards'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('Shoes'); ?>
+							</a></li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="policies">
+					<div class="f-widget">
+						<h2>Policies</h2>
+						<ul class="nav nav-pills nav-stacked">
+							<li><a href="<?php echo $this->getUrl('customer-service') ?>">
+								<?php echo $this->__('Terms of Use'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl('customer-service') ?>">
+								<?php echo $this->__('Privecy Policy'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl('customer-service') ?>">
+								<?php echo $this->__('Refund Policy'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl('customer-service') ?>">
+								<?php echo $this->__('Billing System'); ?>
+							</a></li>
+							<li><a href="<?php echo $this->getUrl('customer-service') ?>">
+								<?php echo $this->__('Ticket System'); ?>
+							</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="about">
+					<div class="f-widget">
+						<h2>About Shopper</h2>
+						<ul class="nav nav-pills nav-stacked">
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('Company Information'); ?>
+							</a></li>
+
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('Careers'); ?>
+							</a></li>
+
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('Store Location'); ?>
+							</a></li>
+
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('Affillate Program'); ?>
+							</a></li>
+
+							<li><a href="<?php echo $this->getUrl('') ?>">
+								<?php echo $this->__('Copyright'); ?>
+							</a></li>
+						</ul>
+					</div>
+				</div>
+					<div class="f-search">
+                        <div class="f-widget">
+                            <h2>About Shopper</h2>
+                            <?php echo $this->getLayout()->createBlock('newsletter/subscribe')->setTemplate('newsletter/subscribe.phtml')->toHtml(); ?>
+                            <div class="searchform" action="#">
+                                <p>Get the most recent updates from <br>our site and be updated your self...</p>
+       						</div>
+                        </div>
+                    </div>
+			</div>
+		</div>
+	</div>	
+	<div class="copyrights">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left"><?php echo $this->getCopyright() ?></p>
+                    <p class="pull-right">Designed by <span><a href="http://www.magentocommerce.com/bug-tracking" target="_blank">Excellence Team</a></span></p>
+                </div>
+            </div>
+        </div>
+</footer>
+
