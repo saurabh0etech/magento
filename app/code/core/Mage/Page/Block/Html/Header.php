@@ -98,13 +98,5 @@ class Mage_Page_Block_Html_Header extends Mage_Core_Block_Template
 
         return $this->_data['welcome'];
     }
-    public function countryName(){
-
-      $_countries = Mage::getModel('directory/country')->getResourceCollection()
-      ->loadByStore()
-      ->toOptionArray(true);     
-      return $_countries;
-
-
-  }
+    
 }
