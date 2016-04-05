@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <poll_system_adminhtml_poll_system_index>
+        <reference name="content">
+            <block type="poll_system/adminhtml_poll_system" name="poll_system" />
+        </reference>
+    </poll_system_adminhtml_poll_system_index>
+</layout>
