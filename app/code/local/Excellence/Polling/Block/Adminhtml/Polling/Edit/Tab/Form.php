@@ -9,7 +9,7 @@ class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tab_Form extends Mage_Admi
       $fieldset = $form->addFieldset('polling_form', array('legend'=>Mage::helper('polling')->__('Poll Questions')));
      
       $fieldset->addField('title', 'text', array(
-          'label'     => Mage::helper('polling')->__('Title'),
+          'label'     => Mage::helper('polling')->__('Poll Question'),
           'class'     => 'required-entry',
           'required'  => true,
           'name'      => 'title',

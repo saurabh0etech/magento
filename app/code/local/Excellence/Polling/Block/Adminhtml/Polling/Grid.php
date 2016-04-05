@@ -35,7 +35,7 @@ class Excellence_Polling_Block_Adminhtml_Polling_Grid extends Mage_Adminhtml_Blo
       ));
 
       $this->addColumn('date_posted', array(
-            'header'    => Mage::helper('poll')->__('Date Posted'),
+            'header'    => Mage::helper('polling')->__('Date Posted'),
             'align'     => 'left',
             'width'     => '120px',
             'type'      => 'datetime',
@@ -58,8 +58,8 @@ class Excellence_Polling_Block_Adminhtml_Polling_Grid extends Mage_Adminhtml_Blo
           'index'     => 'status',
           'type'      => 'options',
           'options'   => array(
-              1 => 'Enabled',
-              2 => 'Disabled',
+              1 => 'Open',
+              2 => 'Closed',
           ),
       ));
 	  

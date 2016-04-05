@@ -19,8 +19,8 @@ class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tab_Answer extends Mage_Ad
 		
       $fieldset->addField('votes_count', 'text', array(
                     'name'      => 'votes_count',
-                    'title'     => Mage::helper('polling')->__('Votes Count'),
-                    'label'     => Mage::helper('polling')->__('Votes Count'),
+                    'title'     => Mage::helper('polling')->__('Votes '),
+                    'label'     => Mage::helper('polling')->__('Votes'),
                     'class'     => 'validate-not-negative-number'
                 )
         );
