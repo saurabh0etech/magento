@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+    <poll_system_index_index>
+        <reference name="content">
+            <block type="poll_system/poll_system" name="poll_system" template="poll_system/poll_system.phtml" />
+        </reference>
+    </poll_system_index_index>
+</layout> 
