@@ -802,8 +802,7 @@ button.button {
 }
 #main-head {
       border-bottom: thin solid hsl(0, 0%, 95%);
-    height: 61px;
-    width: 73%;    
+    height: 61px;    
     margin-top: 5px;  
 }
 .sel-currency {
