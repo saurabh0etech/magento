@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+
+  <default>
+
+    <reference name="header">
+      <block type="cms/block" name="facebook_block" before="-"/>
+      <block type="directory/currency" name="custom_currency_selector" template="directory/currency.phtml"/>
+    </reference> 
+       <reference name='head'>
+    <action method="addItem"><type>skin_css</type><name>css/styles.css</name></action>
+  </reference> 
+ </default>
+
+  <customer_account_login>
+    <reference name="head">
+            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>   
+            <action method="addItem"><type>skin_css</type><name>css/style2.css</name></action>    
+    </reference>
+  </customer_account_login>
+  <checkout_cart_index>
+    <reference name="head">
+            <!-- ... add your other css files ... -->
+            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>   
+            <action method="addItem"><type>skin_css</type><name>css/style2.css</name></action>    
+    </reference>
+  </checkout_cart_index>
+
+   
+</layout>

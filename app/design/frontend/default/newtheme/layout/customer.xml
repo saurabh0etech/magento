@@ -52,14 +52,6 @@ Default layout, loads most of the pages
             <action method="addLink" translate="label title" module="customer"><label>My Account</label><url helper="customer/getAccountUrl"/><title>My Account</title><prepare/><urlParams/><position>10</position></action>
         </reference>
     </default>
-<!--
-Custom made order link
--->
-    <default>
-        <reference name="top.links">
-            <action method="addLink" translate="label title"><label>Orders</label><url></url><title>Orders</title><prepare>true</prepare><position>2</position></action>
-        </reference>
-    </default>
 
 <!--
 Load this update on every page when customer is logged in
@@ -297,7 +289,17 @@ Customer account address edit page
             <block type="customer/address_edit" name="customer_address_edit" template="customer/address/edit.phtml"/>
         </reference>
     </customer_address_form>
-    
+    <default>
+    <reference name="top.links">
+        <action method="addLink" translate="label title">
+            <label>Orders</label>
+            <url>Orders</url>
+            <title>Orders</title>
+            <prepare>true</prepare>
+            <position>2</position>
+        </action>
+    </reference>
+    </default>
 
 
 </layout>
