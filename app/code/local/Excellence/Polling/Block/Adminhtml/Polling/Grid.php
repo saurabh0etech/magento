@@ -28,20 +28,10 @@ class Excellence_Polling_Block_Adminhtml_Polling_Grid extends Mage_Adminhtml_Blo
       ));
 
       $this->addColumn('title', array(
-          'header'    => Mage::helper('polling')->__('Poll Questions'),
+          'header'    => Mage::helper('polling')->__('Title'),
           'align'     =>'left',
-          'width'     => '250px',
           'index'     => 'title',
       ));
-
-      $this->addColumn('date_posted', array(
-            'header'    => Mage::helper('poll')->__('Date Posted'),
-            'align'     => 'left',
-            'width'     => '120px',
-            'type'      => 'datetime',
-            'index'     => 'date_posted',
-            'format'  => Mage::app()->getLocale()->getDateFormat()
-        )); 
 
 	  /*
       $this->addColumn('content', array(

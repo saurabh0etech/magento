@@ -49,7 +49,7 @@
 				<sort_order>71</sort_order>               
 				<children>
 					<items module="polling">
-						<title>Manage Polls</title>
+						<title>Manage Items</title>
 						<sort_order>0</sort_order>
 						<action>polling/adminhtml_polling</action>
 					</items>
