@@ -16,6 +16,10 @@ class Excellence_Polling_Block_Adminhtml_Polling_Grid extends Mage_Adminhtml_Blo
       $collection = Mage::getModel('polling/polling')->getCollection();
       $this->setCollection($collection);
       return parent::_prepareCollection();
+      
+      $collection1 = Mage::getModel('polling/answer')->getCollection();
+      $this->setCollection($collection1);
+      return parent::_prepareCollection();
   }
 
   protected function _prepareColumns()
@@ -40,7 +44,7 @@ class Excellence_Polling_Block_Adminhtml_Polling_Grid extends Mage_Adminhtml_Blo
             'width'     => '120px',
             'type'      => 'datetime',
             'index'     => 'date_posted',
-            'format'  => Mage::app()->getLocale()->getDateFormat()
+            'format'  => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT)
         )); 
 
 	  /*
@@ -61,26 +65,8 @@ class Excellence_Polling_Block_Adminhtml_Polling_Grid extends Mage_Adminhtml_Blo
               1 => 'Open',
               2 => 'Closed',
           ),
-      ));
-	  
-        $this->addColumn('action',
-            array(
-                'header'    =>  Mage::helper('polling')->__('Action'),
-                'width'     => '100',
-                'type'      => 'action',
-                'getter'    => 'getId',
-                'actions'   => array(
-                    array(
-                        'caption'   => Mage::helper('polling')->__('Edit'),
-                        'url'       => array('base'=> '*/*/edit'),
-                        'field'     => 'id'
-                    )
-                ),
-                'filter'    => false,
-                'sortable'  => false,
-                'index'     => 'stores',
-                'is_system' => true,
-        ));
+      ));	  
+        
 		
 		$this->addExportType('*/*/exportCsv', Mage::helper('polling')->__('CSV'));
 		$this->addExportType('*/*/exportXml', Mage::helper('polling')->__('XML'));

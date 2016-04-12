@@ -25,6 +25,15 @@
 
 /* Reset ================================================================================= */
 * { margin:0; padding:0; }
+.polling-index-index .poll-system{
+        margin-left: -121px;
+}
+.polling-index-index .poll{        
+        margin-top: 11px;
+}
+.polling-index-index  .buttons-set{ margin: -15px 0 0
+
+}
 
 form {
                 width:500px;

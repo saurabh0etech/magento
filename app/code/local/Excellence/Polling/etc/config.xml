@@ -10,7 +10,7 @@
 <config>
     <modules>
         <Excellence_Polling>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Excellence_Polling>
     </modules>
     <frontend>
@@ -90,7 +90,14 @@
                 <entities>
                     <polling>
                         <table>polling</table>
-                    </polling>
+                    </polling>                  
+                     <answer>
+                        <table>answer</table>
+                    </answer>
+                    <userid>
+                        <table>userid</table>
+                    </userid>
+                     
                 </entities>
             </polling_mysql4>
         </models>

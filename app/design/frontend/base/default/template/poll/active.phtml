@@ -43,6 +43,7 @@
     <div class="block-title">
         <strong><span><?php echo $this->__('Community Poll') ?></span></strong>
     </div>
+    <center>
     <form id="pollForm" action="<?php echo $action ?>" method="post" onsubmit="return validatePollAnswerIsSelected();">
         <div class="block-content">
             <p class="block-subtitle"><?php echo $this->escapeHtml($poll->getPollTitle()); ?></p>
@@ -62,5 +63,6 @@
             </div>
         </div>
     </form>
+    </center>
 </div>
 <?php endif; ?>
