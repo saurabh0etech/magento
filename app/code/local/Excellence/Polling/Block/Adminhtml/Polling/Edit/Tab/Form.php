@@ -5,21 +5,15 @@ class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tab_Form extends Mage_Admi
   protected function _prepareForm()
   {
       $form = new Varien_Data_Form();
-      $this->setForm($form);
-      $fieldset = $form->addFieldset('polling_form', array('legend'=>Mage::helper('polling')->__('Item information')));
+     
+      $fieldset = $form->addFieldset('polling_form', array('legend'=>Mage::helper('polling')->__('Poll Questions')));
      
       $fieldset->addField('title', 'text', array(
-          'label'     => Mage::helper('polling')->__('Title'),
+          'label'     => Mage::helper('polling')->__('Poll Question'),
           'class'     => 'required-entry',
           'required'  => true,
           'name'      => 'title',
-      ));
-
-      $fieldset->addField('filename', 'file', array(
-          'label'     => Mage::helper('polling')->__('File'),
-          'required'  => false,
-          'name'      => 'filename',
-	  ));
+      ));     
 		
       $fieldset->addField('status', 'select', array(
           'label'     => Mage::helper('polling')->__('Status'),
@@ -27,24 +21,23 @@ class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tab_Form extends Mage_Admi
           'values'    => array(
               array(
                   'value'     => 1,
-                  'label'     => Mage::helper('polling')->__('Enabled'),
+                  'label'     => Mage::helper('polling')->__('Open'),
               ),
 
               array(
                   'value'     => 2,
-                  'label'     => Mage::helper('polling')->__('Disabled'),
+                  'label'     => Mage::helper('polling')->__('Closed'),
               ),
           ),
-      ));
-     
-      $fieldset->addField('content', 'editor', array(
-          'name'      => 'content',
-          'label'     => Mage::helper('polling')->__('Content'),
-          'title'     => Mage::helper('polling')->__('Content'),
-          'style'     => 'width:700px; height:500px;',
-          'wysiwyg'   => false,
-          'required'  => true,
-      ));
+      ));   
+
+      $fieldset->addField('date', 'date', array(
+          'label'     => Mage::helper('polling')->__('Date'),          
+          'tabindex' => 1,
+          'image' => $this->getSkinUrl('images/grid-cal.gif'),
+          'format' => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT)
+        ));  
+      
      
       if ( Mage::getSingleton('adminhtml/session')->getPollingData() )
       {
@@ -53,6 +46,7 @@ class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tab_Form extends Mage_Admi
       } elseif ( Mage::registry('polling_data') ) {
           $form->setValues(Mage::registry('polling_data')->getData());
       }
+       $this->setForm($form);
       return parent::_prepareForm();
   }
 }

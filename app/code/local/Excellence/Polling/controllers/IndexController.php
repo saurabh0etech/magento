@@ -1,47 +1,53 @@
 <?php
 class Excellence_Polling_IndexController extends Mage_Core_Controller_Front_Action
 {
-    public function indexAction()
-    {
-    	
-    	/*
-    	 * Load an object by id 
-    	 * Request looking like:
-    	 * http://site.com/polling?id=15 
-    	 *  or
-    	 * http://site.com/polling/id/15 	
-    	 */
-    	/* 
-		$polling_id = $this->getRequest()->getParam('id');
+	public function indexAction()
+	{
 
-  		if($polling_id != null && $polling_id != '')	{
-			$polling = Mage::getModel('polling/polling')->load($polling_id)->getData();
-		} else {
-			$polling = null;
-		}	
-		*/
-		
-		 /*
-    	 * If no param we load a the last created item
-    	 */ 
-    	/*
-    	if($polling == null) {
-			$resource = Mage::getSingleton('core/resource');
-			$read= $resource->getConnection('core_read');
-			$pollingTable = $resource->getTableName('polling');
-			
-			$select = $read->select()
-			   ->from($pollingTable,array('polling_id','title','content','status'))
-			   ->where('status',1)
-			   ->order('created_time DESC') ;
-			   
-			$polling = $read->fetchRow($select);
-		}
-		Mage::register('polling', $polling);
-		*/
+		$post = $this->getRequest()->getParams();
+		$id= $post['check'];		    	
+		//$model = Mage::getModel('polling/answer')->updateData($id);    	
+		$vote=$model['votes_count'] + 1;
+		if(Mage::getSingleton('customer/session')->isLoggedIn()) 
+		{
+			$customerData = Mage::getSingleton('customer/session')->getCustomer();
+			$customerId = $customerData->getId();
+			//echo $customerId; die();
+			$data1 = Mage::getModel('polling/answer')->saveId($customerId);    
+			print_r($data1);
+		} 	 
 
-			
-		$this->loadLayout();     
+		$this->loadLayout(); 		
 		$this->renderLayout();
-    }
+	}
+	public function submitAction()
+	{
+		$this->loadLayout();  
+		$post = $this->getRequest()->getParams();
+		$id= $post['check'];		  
+		if(Mage::getSingleton('customer/session')->isLoggedIn()) 
+		{
+			$customerData = Mage::getSingleton('customer/session')->getCustomer();
+			$customerId = $customerData->getId();	
+			//echo $customerId; die();			
+			$model1 = Mage::getModel('polling/userid')->srchId($customerId);  
+			//print_r($model1); die(); 			
+			if(empty($model1))
+			{
+				$model = Mage::getModel('polling/answer')->updateData($id);
+				$model1 = Mage::getModel('polling/userid');
+				$data = array("user_id" => $customerId);		   
+				$model1->setData($data);		
+				$model1->save();		
+			}
+			else{
+				$this->_redirect('polling/index');
+				Mage::getSingleton('core/session')->addSuccess('Users are not allowed to vote twice');
+			}	
+
+			$this->renderLayout();
+		}
+	}
 }
+
+
