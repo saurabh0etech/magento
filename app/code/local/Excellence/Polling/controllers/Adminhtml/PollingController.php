@@ -27,8 +27,30 @@ public function editAction() {
         $model->setData($data);
     }
     Mage::register('polling_data', $model);
-    $model1  = Mage::getModel('polling/answer')->load($id);
-    Mage::register('answer_data', $model1);
+
+    $model1  = Mage::getModel('polling/answer')->getVotes($id);
+    //$datanew=$model1->getData();   
+    foreach($model1 as $data){
+    $new_array[]=$data;    
+  }
+  $ans= $new_array[0];
+  $ans1= $new_array[1];
+  $ans2= $new_array[2];
+  $ans3= $new_array[3];
+  // print_r($ans['answer_title']);
+  //   die();
+
+ $array = array(          
+          "answer_title" => $ans['answer_title'],
+          "votes_count" => $ans['votes_count'],
+          "answer_title2" => $ans1['answer_title'],
+          "votes_count2" => $ans1['votes_count'],
+          "answer_title3" => $ans2['answer_title'],
+          "votes_count3" => $ans2['votes_count'],
+          "answer_title4" => $ans3['answer_title'],
+          "votes_count4" => $ans3['votes_count'],
+               );
+     Mage::register('answer_data', $array);
          //print_r($model1);die();
         //die();
     $this->loadLayout();
@@ -78,8 +100,7 @@ public function saveAction() {
        if($model->save()){
         
         $data2 = $this->getRequest()->getPost();
-				//print_r($data2); die();					
-        
+		       
         $pollingid=$this->getRequest()->getParam('id');
 			//	array_splice($data2,2);
         array_shift($data2);
@@ -96,9 +117,10 @@ public function saveAction() {
          $model1->setAnswerTitle($new_array[$i]);
          $model1->setVotesCount($new_array[$i+1]);
          $model1->save();
-     }            	
+     }      
+         	
 
- }							
+ } 
  
  Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('polling')->__('Item was successfully saved'));
  Mage::getSingleton('adminhtml/session')->setFormData(false);

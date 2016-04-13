@@ -14,7 +14,7 @@ class Excellence_Polling_IndexController extends Mage_Core_Controller_Front_Acti
 			$customerId = $customerData->getId();
 			//echo $customerId; die();
 			$data1 = Mage::getModel('polling/answer')->saveId($customerId);    
-			print_r($data1);
+			//print_r($data1);
 		} 	 
 
 		$this->loadLayout(); 		

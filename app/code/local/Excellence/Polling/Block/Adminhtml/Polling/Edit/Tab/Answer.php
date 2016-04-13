@@ -86,7 +86,7 @@ if ( Mage::getSingleton('adminhtml/session')->getAnswerData() )
           $form->setValues(Mage::getSingleton('adminhtml/session')->getAnswerData());
           Mage::getSingleton('adminhtml/session')->setAnswerData(null);
       } elseif ( Mage::registry('answer_data') ) {
-          $form->setValues(Mage::registry('answer_data')->getData());
+          $form->setValues(Mage::registry('answer_data'));
       }
        $this->setForm($form);
 

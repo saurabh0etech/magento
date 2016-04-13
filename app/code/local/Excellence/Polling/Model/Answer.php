@@ -20,9 +20,9 @@ class Excellence_Polling_Model_Answer extends Mage_Core_Model_Abstract
       $model = Mage::getModel('polling/answer')->getCollection()->setOrder('polling_id', 'DESC')->setPageSize(4);
         return $model;
   }
-  public function saveId($id){
-    //echo $id; die();
-    $model1= Mage::getResourceModel('polling/answer')->saveId($id);
+  public function getVotes($id1){
+    //echo $id1; die();
+    $model1= Mage::getResourceModel('polling/answer')->getVotes($id1);
       return $model1;
     
 }

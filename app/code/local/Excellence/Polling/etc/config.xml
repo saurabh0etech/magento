@@ -97,6 +97,9 @@
                     <userid>
                         <table>userid</table>
                     </userid>
+                    <admin>
+                        <table>admin</table>
+                    </admin>
                      
                 </entities>
             </polling_mysql4>

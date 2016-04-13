@@ -21,9 +21,14 @@ class Excellence_Polling_Model_Mysql4_Answer extends Mage_Core_Model_Mysql4_Abst
         $where = $this->_getWriteAdapter()->quoteInto('answer_id = ?', $id2); 
         $query = $this->_getWriteAdapter()->update($table, array('votes_count'=>$vote),$where); 
     }
-    public function saveId($id1){
+    public function getVotes($id2){
+        //echo $id2; die();
         $table = $this->getMainTable();
-    
+        $where = $this->_getWriteAdapter()->quoteInto('polling_id = ?', $id2);
+        $select = $this->_getReadAdapter()->select()->from($table,array('answer_title','votes_count'))->where($where);
+        $data = $this->_getReadAdapter()->fetchAll($select);
+        //print_r($id); die();
+        return $data;
     
 }
     
