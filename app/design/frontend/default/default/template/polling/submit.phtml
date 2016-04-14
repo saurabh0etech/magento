@@ -8,11 +8,24 @@ $module= $this->showpro();
 
 <?php
 $post = $this->getRequest()->getParams();
+//echo $post['check']; die();
 ?>
-
-<h4><b>Community Poll Result :</b></h4></br>
-Answer: <?php echo $post['check']; ?> </br>
+<div class="block block-poll">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Community Poll Result') ?></span></strong>
+    </div>
+   <?php foreach ($module2 as $data) {?>
+	<div class="question">
+	<ul class="poll-system">
+	<h5><b><?php echo $data['polling_id'] ?></b>.&nbsp &nbsp  <strong><?php echo $data['title'] ?></strong>
+	<?php } ?></h5></div></ul>
 <?php foreach ($module as $data1) {?>
-<?php echo $data1['answer_title']; ?>:<b><?php echo $data1['votes_count']; ?></b></br>
-
+<ul class="poll-system">
+<li><h5><?php echo $data1['answer_title']; ?>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<b><?php echo $data1['votes_count']; ?>
+</b></br></h5></li>
+</ul>
 <?php } ?>
+<div id="txt" class="poll-system">
+<h5>You have selected answer&nbsp;&nbsp;:&nbsp;&nbsp; <b><?php echo $post['check'];?></b></h5>
+</div>
+</div>

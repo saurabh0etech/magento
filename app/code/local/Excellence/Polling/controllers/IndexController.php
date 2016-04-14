@@ -13,7 +13,7 @@ class Excellence_Polling_IndexController extends Mage_Core_Controller_Front_Acti
 			$customerData = Mage::getSingleton('customer/session')->getCustomer();
 			$customerId = $customerData->getId();
 			//echo $customerId; die();
-			$data1 = Mage::getModel('polling/answer')->saveId($customerId);    
+			//$data1 = Mage::getModel('polling/answer')->saveId($customerId);    
 			//print_r($data1);
 		} 	 
 
@@ -43,10 +43,13 @@ class Excellence_Polling_IndexController extends Mage_Core_Controller_Front_Acti
 			else{
 				$this->_redirect('polling/index');
 				Mage::getSingleton('core/session')->addSuccess('Users are not allowed to vote twice');
-			}	
-
-			$this->renderLayout();
+			}				
 		}
+		else{
+			$this->_redirect('polling/index');
+			Mage::getSingleton('core/session')->addSuccess('Users are requested to login first befor vote');
+		}
+		$this->renderLayout();
 	}
 }
 

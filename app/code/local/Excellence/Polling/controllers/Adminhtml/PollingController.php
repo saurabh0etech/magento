@@ -100,6 +100,7 @@ public function saveAction() {
        if($model->save()){
         
         $data2 = $this->getRequest()->getPost();
+        //print_r($data2); die();
 		       
         $pollingid=$this->getRequest()->getParam('id');
 			//	array_splice($data2,2);
@@ -111,7 +112,8 @@ public function saveAction() {
         foreach($answer_array as $ans){
          $new_array[]=$ans;
      }
-     for($i=0;$i<8;$i+=2){
+     //echo sizeof($new_array); die();
+     for($i=0;$i<sizeof($new_array);$i+=2){
          $model1 = Mage::getModel('polling/answer');	
          $model1->setPollingId($model->getId($this->getRequest()->getParam('id')));
          $model1->setAnswerTitle($new_array[$i]);

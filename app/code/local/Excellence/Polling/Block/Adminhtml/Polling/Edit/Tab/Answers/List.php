@@ -30,25 +30,30 @@
  * @author      Magento Core Team <core@magentocommerce.com>
  */
 
-class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tab_Answers_List extends Mage_Adminhtml_Block_Widget_Form
+class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tab_Answers_List extends Mage_Adminhtml_Block_Template
 {
     public function __construct()
-    {
-
-        parent::__construct();
-       $this->setTemplate('excellence/polling/answers/tab/list.phtml'); 
+    {       
+      $this->setTemplate('polling/answers/list.phtml'); 
+       
     }
-
-
+    
     protected function _toHtml()
     {
         if( !Mage::registry('polling_data') ) {
-            $this->assign('answer', false);
+            $this->assign('answers', false);
             return parent::_toHtml();
         }
-        
-        
+        $id     = $this->getRequest()->getParam('id');  
+        //echo $id; die();       
+        $model1= Mage::getResourceModel('polling/answer')->fetchAnswer($id);
+         //print_r($id); die();
+            
+        $this->assign('answers', $model1);
+
+        return parent::_toHtml();
     }
+
 
     protected function _prepareLayout()
     {

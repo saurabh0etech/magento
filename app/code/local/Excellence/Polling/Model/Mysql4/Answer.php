@@ -6,11 +6,14 @@ class Excellence_Polling_Model_Mysql4_Answer extends Mage_Core_Model_Mysql4_Abst
     {       
         $this->_init('polling/answer', 'answer_id');
     }
-    public function fetchAnswer($id2){       
+    public function fetchAnswer($id1){  
+    //echo $id1; die();     
     	$table = $this->getMainTable();  
-        //$where = $this->_getReadAdapter()->quoteInto('userid.user_id like ?',$id2);      
-        $select = $this->_getReadAdapter()->select()->from($table,array('answer_id', 'answer_title','polling_id', 'votes_count'))->order('answer_id', 'DESC')->limit(4);
+        $where = $this->_getReadAdapter()->quoteInto('polling_id = ?',$id1); 
+        //echo $where; die();     
+        $select = $this->_getReadAdapter()->select()->from($table,array('answer_id', 'answer_title','polling_id', 'votes_count'))->order('answer_id', 'DESC')->where($where);
         $id = $this->_getReadAdapter()->fetchAll($select);
+        //print_r($id); die();
         return $id;
     }
     public function updateData($id2){         

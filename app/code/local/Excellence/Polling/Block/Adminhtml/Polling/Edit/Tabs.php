@@ -21,10 +21,9 @@ class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tabs extends Mage_Adminhtm
       $this->addTab('answer_section', array(
           'label'     => Mage::helper('polling')->__('Poll Answers'),
           'title'     => Mage::helper('polling')->__('Poll Answers'),
-          'content'   => $this->getLayout()->createBlock('polling/adminhtml_polling_edit_tab_answer')->toHtml(), 
+          'content'   => $this->getLayout()->createBlock('polling/adminhtml_polling_edit_tab_answers_list')->toHtml(), 
                                      
-            ));
-     
+            ));     
       return parent::_beforeToHtml();
   }
 }

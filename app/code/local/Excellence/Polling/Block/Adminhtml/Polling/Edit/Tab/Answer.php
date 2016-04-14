@@ -1,7 +1,7 @@
 <?php
 
 class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tab_Answer extends Mage_Adminhtml_Block_Widget_Form
-{
+{    
   protected function _prepareForm()
   {
       $form = new Varien_Data_Form();
@@ -80,6 +80,7 @@ class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tab_Answer extends Mage_Ad
                     'value'     => $this->getRequest()->getParam('id'),
                 )
         );
+        
 
 if ( Mage::getSingleton('adminhtml/session')->getAnswerData() )
       {

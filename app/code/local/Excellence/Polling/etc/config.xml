@@ -56,6 +56,13 @@
 				</children>
 			</polling>
 		</menu>
+        <layout>
+           <updates>
+               <polling>
+                  <file>pollingtab.xml</file>
+               </polling>
+           </updates>
+       </layout>
 		<acl>
 			<resources>
 				<all>
@@ -127,7 +134,7 @@
         <blocks>
             <polling>
                 <class>Excellence_Polling_Block</class>
-            </polling>
+            </polling>            
         </blocks>
         <helpers>
             <polling>
