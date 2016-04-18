@@ -29,14 +29,18 @@
 .polling-index-index .poll-system{
         margin-left: 20px;
 }
+.polling-index-index .poll-system h5 span{
+        margin-left: 20px;
+}
 .polling-index-index .poll{        
         margin-top: 11px;
 }
 .polling-index-index  .buttons-set{ margin: -15px 0 0
 
 }
-.question{
-        margin-left: 10px;
+.polling-index-index .question{        
+        margin-left: 118px;
+    margin-top: 130px;
 }
  .polling-index-submit .poll-system li{
         margin-left: 23px;
@@ -46,6 +50,57 @@
        text-align: center;
        border:1px solid #bbafa0; background:green; padding:-1px 25px 12px 33px;
  }
+ .polling-index-index .block {
+        
+       background-image: url("../images/page-bg.jpg");
+        background-size: 80px 60px;
+    background-repeat: no-repeat;
+     background-size: 475px 791px;
+ }
+ .polling-index-submit .block {
+
+background: #2c3e50; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #2c3e50 , #3498db); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #2c3e50 , #3498db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+ }
+ .polling-index-index .poll .poll-system h6 {
+    color: #FDF2EE;
+    line-height: 1.35;
+    margin: 0 0 5px 110px;
+    font-family: 'Source Sans Pro', sans-serif; font-size: 11px;
+}
+.polling-index-index .question h5 {
+    color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 12px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-transform: uppercase;
+    margin-left: -30px;  
+    margin-bottom: -20px;  
+}
+
+.polling-index-index .block-poll .button span {    
+    border-color: #406a83;    
+}
+.polling-index-index .buttons-set button.button {
+    float: right;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 9px;
+}
+.rslt{
+    border-bottom: 1px solid #e4e4e4;
+    color: #333333;
+color: #CEF0D4; font-family: 'Rouge Script', cursive; font-size: 17px; font-weight: normal; line-height: 48px; margin: 0 0 50px; text-align: center; text-shadow: 1px 1px 2px #082b34;
+}
+.polling-index-submit .question h5 {
+    color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 12px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
+   margin-bottom: -15px;
+   margin-top: -60px
+}
+.polling-index-submit .poll-system li h5 {
+    color: #FDF2EE;
+    line-height: 1.35;
+    margin: 0 0 5px 100px;
+    font-family: 'Source Sans Pro', sans-serif; font-size: 11px;
+}
 
 form {
                 width:500px;

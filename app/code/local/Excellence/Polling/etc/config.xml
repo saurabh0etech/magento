@@ -104,9 +104,9 @@
                     <userid>
                         <table>userid</table>
                     </userid>
-                    <admin>
-                        <table>admin</table>
-                    </admin>
+                    <new>
+                        <table>new</table>
+                    </new>
                      
                 </entities>
             </polling_mysql4>

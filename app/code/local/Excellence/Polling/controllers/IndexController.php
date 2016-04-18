@@ -28,10 +28,8 @@ class Excellence_Polling_IndexController extends Mage_Core_Controller_Front_Acti
 		if(Mage::getSingleton('customer/session')->isLoggedIn()) 
 		{
 			$customerData = Mage::getSingleton('customer/session')->getCustomer();
-			$customerId = $customerData->getId();	
-			//echo $customerId; die();			
-			$model1 = Mage::getModel('polling/userid')->srchId($customerId);  
-			//print_r($model1); die(); 			
+			$customerId = $customerData->getId();
+			$model1 = Mage::getModel('polling/userid')->searchId($customerId); 
 			if(empty($model1))
 			{
 				$model = Mage::getModel('polling/answer')->updateData($id);

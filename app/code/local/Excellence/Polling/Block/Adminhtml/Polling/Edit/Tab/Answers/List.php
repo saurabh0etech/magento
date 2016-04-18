@@ -44,17 +44,11 @@ class Excellence_Polling_Block_Adminhtml_Polling_Edit_Tab_Answers_List extends M
             $this->assign('answers', false);
             return parent::_toHtml();
         }
-        $id     = $this->getRequest()->getParam('id');  
-        //echo $id; die();       
-        $model1= Mage::getResourceModel('polling/answer')->fetchAnswer($id);
-         //print_r($id); die();
-            
+        $id = $this->getRequest()->getParam('id');
+        $model1= Mage::getModel('polling/answer')->getCollection()->addFieldToFilter('polling_id', array('in' => $id));
         $this->assign('answers', $model1);
-
         return parent::_toHtml();
     }
-
-
     protected function _prepareLayout()
     {
         $this->setChild('deleteButton',
