@@ -4,5 +4,5 @@
         <reference name="content">
             <block type="polling/adminhtml_polling" name="polling" />
         </reference>
-    </polling_adminhtml_polling_index>
+    </polling_adminhtml_polling_index>    
 </layout>

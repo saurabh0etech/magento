@@ -45,33 +45,32 @@ class Mage_Adminhtml_Block_Poll_Edit_Tab_Answers_List extends Mage_Adminhtml_Blo
         }
         
         $collection = Mage::getModel('poll/poll_answer')
-            ->getResourceCollection()
-            ->addPollFilter(Mage::registry('poll_data')->getId())
-            ->load();
+        ->getResourceCollection()
+        ->addPollFilter(Mage::registry('poll_data')->getId())
+        ->load();
         $this->assign('answers', $collection);
 
         return parent::_toHtml();
     }
-
     protected function _prepareLayout()
     {
         $this->setChild('deleteButton',
             $this->getLayout()->createBlock('adminhtml/widget_button')
-                ->setData(array(
-                    'label'     => Mage::helper('poll')->__('Delete'),
-                    'onclick'   => 'answer.del(this)',
-                    'class' => 'delete'
+            ->setData(array(
+                'label'     => Mage::helper('poll')->__('Delete'),
+                'onclick'   => 'answer.del(this)',
+                'class' => 'delete'
                 ))
-        );
+            );
 
         $this->setChild('addButton',
             $this->getLayout()->createBlock('adminhtml/widget_button')
-                ->setData(array(
-                    'label'     => Mage::helper('poll')->__('Add New Answer'),
-                    'onclick'   => 'answer.add(this)',
-                    'class' => 'add'
+            ->setData(array(
+                'label'     => Mage::helper('poll')->__('Add New Answer'),
+                'onclick'   => 'answer.add(this)',
+                'class' => 'add'
                 ))
-        );
+            );
         return parent::_prepareLayout();
     }
 
