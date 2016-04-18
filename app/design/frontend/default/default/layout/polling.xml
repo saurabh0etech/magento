@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+    <polling_index_index>
+        <reference name="content">
+            <block type="polling/polling" name="polling" template="polling/polling.phtml" />
+        </reference>
+    </polling_index_index>
+    <polling_index_submit>
+        <reference name="content">
+            <block type="polling/polling" name="polling" template="polling/submit.phtml" />
+        </reference>
+    </polling_index_submit>
+</layout> 
